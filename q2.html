@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cake Shop Order</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .wrapper {
+      width: 550px;
+      margin: 0 auto;
+    }
+
+    .shop-header {
+      background-color: #cc0000;
+      color: #ffffff;
+      padding: 6px;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .cake-item {
+      width: 23%;
+      text-align: center;
+    }
+
+    .cake-item img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      border: 1px solid #dddddd;
+    }
+
+    .cake-label {
+      font-size: 9px;
+      font-weight: bold;
+      margin-top: 4px;
+      color: #333333;
+    }
+
+    .order-title {
+      color: #0055ff;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 18px 0 10px;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 8px;
+    }
+
+    .form-group label {
+      display: block;
+      color: #0055ff;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 2px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 4px;
+      box-sizing: border-box;
+      border: 1px solid #777777;
+      font-size: 12px;
+      color: red;
+      font-weight: bold;
+    }
+
+    .btn-place {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      width: 170px;
+      padding: 6px 0;
+      font-size: 12px;
+      cursor: pointer;
+      margin: 10px 0 12px;
+      border-radius: 2px;
+    }
+
+    .divider {
+      height: 1px;
+      background-color: #0055ff;
+      margin: 5px 0 12px;
+    }
+
+    .bill-heading {
+      color: #008800;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .bill-box {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid #cccccc;
+    }
+
+    .bill-title {
+      background-color: #28a745;
+      color: #ffffff;
+      font-weight: bold;
+      padding: 6px 20px;
+      font-size: 16px;
+    }
+
+    .bill-amount {
+      color: #cc0000;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 6px 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <div class="shop-header">CAKE SHOP</div>
+
+    <div class="gallery">
+      <div class="cake-item">
+        <img src="cake.png" alt="Color Cake">
+        <div class="cake-label">Color Cake &ndash; Rs. 300</div>
+      </div>
+      <div class="cake-item">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=200" alt="Brown Cake">
+        <div class="cake-label">Brown Cake &ndash; Rs. 200</div>
+      </div>
+      <div class="cake-item">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200" alt="Milky Cake">
+        <div class="cake-label">Milky Cake &ndash; Rs. 250</div>
+      </div>
+      <div class="cake-item">
+        <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=200" alt="Black Forest Cake">
+        <div class="cake-label">Black Forest Cake &ndash; Rs. 350</div>
+      </div>
+    </div>
+
+    <div class="order-title">Order Cake</div>
+
+    <div class="form-group">
+      <label>Color Cake(Quantity)</label>
+      <input type="number" id="qtyColor" value="2" min="0">
+    </div>
+    <div class="form-group">
+      <label>Brown Cake(Quantity)</label>
+      <input type="number" id="qtyBrown" value="1" min="0">
+    </div>
+    <div class="form-group">
+      <label>Milky Cake(Quantity)</label>
+      <input type="number" id="qtyMilky" value="2" min="0">
+    </div>
+    <div class="form-group">
+      <label>Black Forest Cake(Quantity)</label>
+      <input type="number" id="qtyBlackForest" value="1" min="0">
+    </div>
+
+    <button id="btnOrder" class="btn-place">Place Order</button>
+
+    <div class="divider"></div>
+
+    <div class="bill-heading">Purchase Order Bill!!</div>
+    <div class="bill-box">
+      <div class="bill-title">Total Price</div>
+      <div class="bill-amount" id="totalBill">Rs.1650</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

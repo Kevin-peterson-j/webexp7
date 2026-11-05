@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Calculator App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .header-bar {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    h3 {
+      font-size: 14px;
+      margin: 15px 0 10px;
+      font-weight: bold;
+    }
+
+    .main-amount-input {
+      width: 130px;
+      padding: 5px;
+      text-align: center;
+      font-size: 14px;
+      border: 1px solid #333333;
+    }
+
+    .inputs-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin: 20px 0;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .percent-input {
+      width: 45px;
+      padding: 4px;
+      text-align: center;
+      border: 1px solid #333333;
+    }
+
+    #btnEvaluate {
+      background-color: #0b1354;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 2px;
+      margin-bottom: 25px;
+    }
+
+    #btnEvaluate:hover {
+      background-color: #1a2a8a;
+    }
+
+    .results-row {
+      display: none;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .result-box {
+      width: 90px;
+      height: 55px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .box-rent { background-color: #0044ff; }
+    .box-accessories { background-color: #008000; }
+    .box-emergency { background-color: #0000cc; }
+    .box-saving { background-color: #ff007f; }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">Budget Calculator App</div>
+
+  <h3>Enter Amount that you want to Manage</h3>
+  <input type="number" id="totalAmount" class="main-amount-input" value="15000" /><br>
+
+  <h3>How would you like to divide your money?</h3>
+  <div class="inputs-row">
+    <label>Room Rent(%): <input type="number" id="pRent" class="percent-input" value="50" /></label>
+    <label>Accessories(%): <input type="number" id="pAccessories" class="percent-input" value="20" /></label>
+    <label>Emergency(%): <input type="number" id="pEmergency" class="percent-input" value="20" /></label>
+    <label>Saving(%): <input type="number" id="pSaving" class="percent-input" value="10" /></label>
+  </div>
+
+  <button id="btnEvaluate">Evaluate My Money</button>
+
+  <div class="results-row" id="displayResults">
+    <div class="result-box box-rent">
+      <span>Room Rent</span>
+      <span id="valRent">Rs. 0</span>
+    </div>
+    <div class="result-box box-accessories">
+      <span>Accessories</span>
+      <span id="valAccessories">Rs. 0</span>
+    </div>
+    <div class="result-box box-emergency">
+      <span>Emergency</span>
+      <span id="valEmergency">Rs. 0</span>
+    </div>
+    <div class="result-box box-saving">
+      <span>Saving</span>
+      <span id="valSaving">Rs. 0</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

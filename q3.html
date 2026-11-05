@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Workshop</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    h2 {
+      color: #3b82f6;
+      font-size: 22px;
+      margin-bottom: 40px;
+    }
+
+    .car-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 220px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+
+    #carGlass {
+      width: 70px;
+      height: 0;
+      border-bottom: 35px solid #2e7d32;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      transition: border-bottom-color 0.3s ease;
+    }
+
+    #carBody {
+      width: 170px;
+      height: 45px;
+      background-color: #76ff03;
+      margin-top: -1px;
+      transition: background-color 0.3s ease;
+    }
+
+    .wheels-container {
+      display: flex;
+      width: 140px;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: -12px;
+    }
+
+    .tyre {
+      width: 50px;
+      height: 50px;
+      background-color: #1a1e36;
+      border-radius: 50%;
+      transition: width 0.2s ease, height 0.2s ease;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      background-color: #ffffff;
+      color: #3b82f6;
+      border: 1px solid #93c5fd;
+      padding: 6px 12px;
+      font-size: 11px;
+      border-radius: 3px;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      transition: all 0.2s;
+    }
+
+    .btn-action:hover {
+      background-color: #eff6ff;
+      border-color: #3b82f6;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>3. Car Workshop</h2>
+
+  <div class="car-stage">
+    <div id="carGlass"></div>
+    <div id="carBody"></div>
+    <div class="wheels-container">
+      <div class="tyre"></div>
+      <div class="tyre"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="btnGlassColor" class="btn-action">Change Glass Color</button>
+    <button id="btnBodyColor" class="btn-action">Change Body Color</button>
+    <button id="btnTyreInc" class="btn-action">Tyre Size Increase</button>
+    <button id="btnTyreDec" class="btn-action">Tyre Size Decrease</button>
+    <button id="btnReset" class="btn-action">Reset</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
