@@ -158,4 +158,88 @@
     .open-link {
       font-size: 13px;
       color: #58a6ff;
+      text-decoration: none;
     }
+
+    .open-link:hover {
+      text-decoration: underline;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div>
+        <h1>jQuery Lab Applications</h1>
+        <div class="subtitle">Interactive Web Applications using jQuery DOM Actions</div>
+      </div>
+      <span class="badge">Repository Index</span>
+    </header>
+
+    <!-- Cards for Q1, Q2, Q3 -->
+    <div class="grid">
+      <!-- Question 1 -->
+      <div class="card">
+        <div>
+          <h3><span class="badge">Q1</span> Budget Calculator</h3>
+          <p>Splits managed income across room rent, accessories, emergency, and savings using percentage evaluation and alerts.</p>
+        </div>
+        <div class="btn-group">
+          <a href="q1.html" class="btn btn-primary" target="_blank">Open Full Page</a>
+          <button class="btn btn-secondary" onclick="loadPreview('q1.html')">Preview</button>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="card">
+        <div>
+          <h3><span class="badge">Q2</span> Cake Order Shop</h3>
+          <p>Product gallery with live bill total calculations using dynamic quantity inputs and jQuery math operations.</p>
+        </div>
+        <div class="btn-group">
+          <a href="q2.html" class="btn btn-primary" target="_blank">Open Full Page</a>
+          <button class="btn btn-secondary" onclick="loadPreview('q2.html')">Preview</button>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="card">
+        <div>
+          <h3><span class="badge">Q3</span> Car Workshop</h3>
+          <p>Interactive customization canvas modifying car body paint, glass tinting, and wheel diameter dynamically.</p>
+        </div>
+        <div class="btn-group">
+          <a href="q3.html" class="btn btn-primary" target="_blank">Open Full Page</a>
+          <button class="btn btn-secondary" onclick="loadPreview('q3.html')">Preview</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Preview Sandbox -->
+    <section class="preview-card">
+      <div class="preview-header">
+        <span class="preview-title">Live Preview: <strong id="currentFile" style="color: #58a6ff;">q1.html</strong></span>
+        <a id="externalLink" href="q1.html" target="_blank" class="open-link">Open in New Tab ↗</a>
+      </div>
+      <iframe id="previewFrame" src="q1.html"></iframe>
+    </section>
+  </div>
+
+  <script>
+    function loadPreview(file) {
+      document.getElementById('previewFrame').src = file;
+      document.getElementById('currentFile').textContent = file;
+      document.getElementById('externalLink').href = file;
+    }
+  </script>
+</body>
+</html>
